@@ -345,6 +345,7 @@
         static void Task4p2()
         {
             Console.WriteLine();
+            Console.WriteLine();
         }
 
 
