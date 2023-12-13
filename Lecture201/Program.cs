@@ -342,6 +342,13 @@
 
 
 
+        static void Task4p2()
+        {
+
+        }
+
+
+
         static void Test0()
         {
             PersonTest german = new PersonTest("GermanPaskovskij", "Male", new DateTime(1990, 03, 15));
