@@ -360,6 +360,5 @@
             Console.WriteLine(german3.DOB);
             Console.WriteLine(german3.Name);
         }
-
     }
 }
