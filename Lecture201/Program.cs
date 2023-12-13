@@ -37,6 +37,15 @@
                 case "2.2":
                     Task2p2();
                     break;
+                case "3.1":
+                    Task3p1();
+                    break;
+                case "3.2":
+                    Task3p2();
+                    break;
+                case "4.1":
+                    Task4p1();
+                    break;
 
                 case "000":
                     Test0();
@@ -155,12 +164,14 @@
             carPartsStore.Products.Add("VW Golf Mk6 front bumper");
             carPartsStore.Products.Add("BMW E46 brake pads");
 
-            Store carPartsStore2 = new Store("Autoaibe");
+            List<string> autoaibeParts = new List<string>
+            {
+                "Toyota Avensis steering wheel",
+                "VW Golf Mk6 rear bumper",
+                "BMW E46 brake pads"
+            };
+            Store carPartsStore2 = new Store("Autoaibe", 1995, autoaibeParts);
             listOfStores.Add(carPartsStore2);
-            carPartsStore2.Year = 1995;
-            carPartsStore2.Products.Add("Toyota Avensis steering wheel");
-            carPartsStore2.Products.Add("VW Golf Mk6 rear bumper");
-            carPartsStore2.Products.Add("BMW E46 brake pads");
 
             foreach (var store in listOfStores)
             {
@@ -170,8 +181,162 @@
                 }
                 Console.WriteLine();
             }
+        }
 
 
+
+        static void Task3p1()
+        {
+            Dog fluffy = new Dog("Fluffy", "Rotweiler", 7, false, "", "");
+
+            Cat garfield = new Cat("Garfield", "", 5, false);
+
+            Hamster hamster = new Hamster("Stewart Little", "White", 4);
+
+            foreach (string name in GetAnimalName(fluffy, garfield, hamster))
+            {
+                Console.WriteLine(name);
+            }
+            Console.WriteLine();
+
+
+            Hamster hamster1 = new Hamster("Hummer", "Camo Grey", 3);
+            Hamster hamster2 = new Hamster("TheRatBoy", "Black and Yellow", 6);
+            Hamster hamster3 = new Hamster("WheelRunner2049", "White", 5);
+
+            Dog dog1 = new Dog("Doggy1", "Angry breed", 5, true, "Doggy1Parent1", "Doggy1Parent2");
+            Dog dog2 = new Dog("Doggy2", "Less angry breed", 2, false, "", "");
+            Dog dog3 = new Dog("Doggy3", "Cheerful breed", 8, true, "Doggy3Parent1", "Doggy3Parent2");
+            Dog dog4 = new Dog("Doggy4", "Happy breed", 1, false, "", "");
+
+            Cat cat1 = new Cat();
+            Cat cat2 = new Cat();
+
+
+            List<Dog> dogs = new List<Dog>();
+            List<Cat> cats = new List<Cat>();
+            List<Hamster> hamsters = new List<Hamster>();
+            dogs.Add(fluffy);
+            dogs.Add(dog1);
+            dogs.Add(dog2);
+            dogs.Add(dog3);
+            dogs.Add(dog4);
+            cats.Add(garfield);
+            cats.Add(cat1);
+            cats.Add(cat2);
+            hamsters.Add(hamster);
+            hamsters.Add(hamster1);
+            hamsters.Add(hamster2);
+            hamsters.Add(hamster3);
+
+            foreach (var kvPair in GetAnimalCount(dogs, cats, hamsters))
+            {
+                Console.WriteLine(kvPair.Key + " " + kvPair.Value);
+            }
+            Console.WriteLine();
+
+        }
+
+        static List<string> GetAnimalName(Dog dog, Cat cat, Hamster hamster)
+        {
+            var list = new List<string>();
+            list.Add(dog.Name);
+            list.Add(cat.Name);
+            list.Add(hamster.Name);
+            return list;
+        }
+
+        static Dictionary<string, int> GetAnimalCount(List<Dog> dogs, List<Cat> cats, List<Hamster> hamsters)
+        {
+            var countDict = new Dictionary<string, int>();
+            countDict.Add("Dog", dogs.Count());
+            countDict.Add("Cat", cats.Count());
+            countDict.Add("Hamster", hamsters.Count());
+            return countDict;
+        }
+
+
+
+        static void Task3p2()
+        {
+            Circle c = new Circle(5);
+            Console.WriteLine(c.Radius);
+            Console.WriteLine(c.Area);
+            Console.WriteLine(c.Circumference);
+            Console.WriteLine();
+
+            Square s = new Square(3.3, 10);
+            Console.WriteLine(s.Side1);
+            Console.WriteLine(s.Side2);
+            Console.WriteLine(s.Perimeter);
+            Console.WriteLine(s.Area);
+            Console.WriteLine(s.Side1);
+            Console.WriteLine(s.Side2);
+            Console.WriteLine();
+
+            s.Side1 = 5;
+            Console.WriteLine(s.Side1);
+            Console.WriteLine(s.Side2);
+            Console.WriteLine(s.Perimeter);
+            Console.WriteLine(s.Area);
+            Console.WriteLine();
+
+            s.Side1 = 4;
+            s.Side2 = 7;
+            Console.WriteLine(s.Side1);
+            Console.WriteLine(s.Side2);
+            Console.WriteLine(s.Perimeter);
+            Console.WriteLine(s.Area);
+            Console.WriteLine();
+
+
+            Triangle t = new Triangle(3, 4, 5);
+            Console.WriteLine(t.Side1);
+            Console.WriteLine(t.Side2);
+            Console.WriteLine(t.Side3);
+            Console.WriteLine(t.Perimeter);
+            Console.WriteLine(t.Area);
+            Console.WriteLine();
+
+            t.Side1 = 2;
+            Console.WriteLine(t.Side1);
+            Console.WriteLine(t.Side2);
+            Console.WriteLine(t.Side3);
+            Console.WriteLine(t.Perimeter);
+            Console.WriteLine(t.Area);
+            Console.WriteLine();
+
+        }
+
+
+
+        static void Task4p1()
+        {
+            Car car = new Car();
+            car.ModelName = "300SL";
+            car.ManufactureYear = 1955;
+            car.Engine.Capacity = 2996;
+            car.Engine.FuelType = "Petrol";
+            //car.Engine.Running = true;
+            Console.WriteLine(car.ModelName + " " + 
+                                car.ManufactureYear + " " + 
+                                car.Engine.Capacity + " " + 
+                                car.Engine.FuelType + " " + 
+                                car.Engine.Running);
+
+            car.StartEngine();
+            Console.WriteLine(car.ModelName + " " +
+                                car.ManufactureYear + " " +
+                                car.Engine.Capacity + " " +
+                                car.Engine.FuelType + " " +
+                                car.Engine.Running);
+
+            car.Engine.Stop();
+            Console.WriteLine(car.ModelName + " " +
+                                car.ManufactureYear + " " +
+                                car.Engine.Capacity + " " +
+                                car.Engine.FuelType + " " +
+                                car.Engine.Running);
         }
 
 
