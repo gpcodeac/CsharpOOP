@@ -30,5 +30,9 @@ namespace Lecture202.Class_collection
             SongList.Remove(song);
         }
 
+        public void PrintSongs()
+        {
+
+        }
     }
 }

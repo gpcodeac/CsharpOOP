@@ -47,6 +47,9 @@ namespace Lecture202
                 case "2.3":
                     Task2p3();
                     break;
+                case "2.4":
+                    Task2p4();
+                    break;
 
                 //case "000":
                 //    Test0();
@@ -67,6 +70,7 @@ namespace Lecture202
             num.Add(-34);
 
             num.Print();
+            
         }
 
         static void Task1p2()
@@ -187,10 +191,22 @@ namespace Lecture202
             movie.Rate(9);
             movie.Rate(10);
             movie.Rate(5); //~7,7
+            
 
             if (movie.Recommended())
             {
                 Console.WriteLine($"Recommended to watch {movie.Title}");
+            }
+
+            Movie movie1 = new Movie("The Matrix", "Action");
+            movie1.Rate(3);
+            movie1.Rate(4);
+            movie1.Rate(4);
+            movie1.Rate(6);
+            movie1.Rate(3);
+            if (movie1.Recommended())
+            {
+                Console.WriteLine($"Recommended to watch {movie1.Title}");
             }
         }
 
@@ -198,6 +214,13 @@ namespace Lecture202
         {
             Book book = new Book(123456,"Harry Potter pt3", "J.K.Rowling", 1999, 317);
             Console.WriteLine(book.ReadTime());
+            Console.WriteLine();
+        }
+
+        static void Task2p4()
+        {
+            Computer computer = new Computer("MyPC", "Dell", 16, 512);
+            Console.WriteLine(computer.CheckIfResourcesAreAvailable(8, 256));
         }
 
     }
