@@ -126,6 +126,20 @@ namespace Lecture203
             Console.WriteLine($"{phone.Name} warranty is {phone.Warranty}");
             Console.WriteLine($"{laptop.Name} warranty is {laptop.Warranty}");
             Console.WriteLine($"{tablet.Name} warranty is {tablet.Warranty}");
+
+            //note that child classes can be added to a list of parent class
+            Console.WriteLine();
+            List<Product> products = new List<Product>();
+            products.Add(sausage);
+            products.Add(milk);
+            products.Add(bread);
+            products.Add(cheese);
+            products.Add(tv);
+            products.Add(phone);
+            foreach (Product product in products)
+            {
+                Console.WriteLine(product.Name);
+            }
         }
         static void Task2p2()
         {
