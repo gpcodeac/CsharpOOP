@@ -167,6 +167,26 @@
                     {
                         binaryWriter.Write(inputLine + "\r\n");
                     }
+
+                    //binaryWriter.Write("hello");
+                    //binaryWriter.Write(12);
+                    //binaryWriter.Write('#');
+                    //binaryWriter.Write('$');
+                    //binaryWriter.Write("#$");
+
+                    //binaryWriter.Write((byte)104);
+                    //binaryWriter.Write((byte)101);
+                    //binaryWriter.Write((byte)108);
+                    //binaryWriter.Write((byte)108);
+                    //binaryWriter.Write((byte)111); 
+                    //binaryWriter.Write((byte)44);
+                    //binaryWriter.Write((byte)32);
+                    //binaryWriter.Write((byte)119);
+                    //binaryWriter.Write((byte)111);
+                    //binaryWriter.Write((byte)104);
+                    //binaryWriter.Write((byte)108);
+                    //binaryWriter.Write((byte)100);
+                    //binaryWriter.Write((byte)33);
                 }
             }
             Console.WriteLine("File saved.\n\n");
