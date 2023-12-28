@@ -163,16 +163,16 @@
             {
                 using (BinaryWriter binaryWriter = new BinaryWriter(stream))
                 {
-                    while ((inputLine = Console.ReadLine()) != null)
-                    {
-                        binaryWriter.Write(inputLine + "\r\n");
-                    }
+                    //while ((inputLine = Console.ReadLine()) != null)
+                    //{
+                    //    binaryWriter.Write(inputLine + "\r\n");
+                    //}
 
-                    //binaryWriter.Write("hello");
-                    //binaryWriter.Write(12);
-                    //binaryWriter.Write('#');
-                    //binaryWriter.Write('$');
-                    //binaryWriter.Write("#$");
+                    binaryWriter.Write("hello");
+                    binaryWriter.Write(12);
+                    binaryWriter.Write('#');
+                    binaryWriter.Write('$');
+                    binaryWriter.Write("#$");
 
                     //binaryWriter.Write((byte)104);
                     //binaryWriter.Write((byte)101);
@@ -227,6 +227,24 @@
                     }
                 }
             }
+            Console.WriteLine("\n");
+
+
+            Console.WriteLine("File content in just with Read method:");
+            using (var stream = File.Open(path, FileMode.Open))
+            {
+                using (BinaryReader binaryReader = new BinaryReader(stream))
+                {
+                    int i = 0;
+                    while (i < stream.Length)
+                    {
+                        int intFromRead= binaryReader.Read();
+                        Console.WriteLine(intFromRead.ToString());
+                        i++;
+                    }
+                }
+            }
+            Console.WriteLine("\n");
 
         }
 
