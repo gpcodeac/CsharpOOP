@@ -40,9 +40,9 @@ namespace Lecture207
                     Task4p1();
                     break;
 
-                //case "000":
-                //    Test0();
-                //    break;
+                case "000":
+                    Test0();
+                    break;
                 default:
                     Console.WriteLine("No such task number.");
                     break;
@@ -174,5 +174,45 @@ namespace Lecture207
             }
         }
 
+
+        static void Test0()
+        {
+            List<int> values = new() { 1, 2, 3 };
+            var (a, b, c) = values;
+            Console.WriteLine($"{a} {b} {c}");
+            //int result = Test0Print(values);
+
+        }
+
+        static int Test0Print(int num1, int num2, int num3)
+        {
+            return num1 + num2 + num3;
+        }
+
+    }
+
+
+    //for Test0, deconstructs list into 3 variables
+    static class IEnumerableDeconstructs
+    {
+        public static void Deconstruct<T>(this IEnumerable<T> values, out T a, out T b)
+        {
+            IEnumerator<T> enumerator = values.GetEnumerator();
+            enumerator.MoveNext();
+            a = enumerator.Current;
+            enumerator.MoveNext();
+            b = enumerator.Current;
+        }
+
+        public static void Deconstruct<T>(this IEnumerable<T> values, out T a, out T b, out T c)
+        {
+            IEnumerator<T> enumerator = values.GetEnumerator();
+            enumerator.MoveNext();
+            a = enumerator.Current;
+            enumerator.MoveNext();
+            b = enumerator.Current;
+            enumerator.MoveNext();
+            c = enumerator.Current;
+        }
     }
 }
