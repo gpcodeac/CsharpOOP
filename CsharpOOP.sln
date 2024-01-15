@@ -23,7 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture209", "Lecture209\Le
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture210", "Lecture210\Lecture210.csproj", "{74DCF16F-9353-4BD4-B171-B9F09C794AB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture211", "Lecture211\Lecture211.csproj", "{68CBC830-D118-4C36-827D-89B5489D6A1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture211", "Lecture211\Lecture211.csproj", "{68CBC830-D118-4C36-827D-89B5489D6A1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture212", "Lecture212\Lecture212.csproj", "{12784AE2-3D6F-4116-90F7-FBD28DBB7270}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture213", "Lecture213\Lecture213.csproj", "{664303C0-478D-44F1-9D34-4B23C6B77CDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture214", "Lecture214\Lecture214.csproj", "{B21569D7-2883-433A-8791-87650E693FDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +81,18 @@ Global
 		{68CBC830-D118-4C36-827D-89B5489D6A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68CBC830-D118-4C36-827D-89B5489D6A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68CBC830-D118-4C36-827D-89B5489D6A1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12784AE2-3D6F-4116-90F7-FBD28DBB7270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12784AE2-3D6F-4116-90F7-FBD28DBB7270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12784AE2-3D6F-4116-90F7-FBD28DBB7270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12784AE2-3D6F-4116-90F7-FBD28DBB7270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664303C0-478D-44F1-9D34-4B23C6B77CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664303C0-478D-44F1-9D34-4B23C6B77CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664303C0-478D-44F1-9D34-4B23C6B77CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664303C0-478D-44F1-9D34-4B23C6B77CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B21569D7-2883-433A-8791-87650E693FDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21569D7-2883-433A-8791-87650E693FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21569D7-2883-433A-8791-87650E693FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21569D7-2883-433A-8791-87650E693FDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

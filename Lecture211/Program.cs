@@ -68,6 +68,7 @@ namespace Lecture211
             int nullIndex3 = Array.IndexOf(bytes, null);
             Console.WriteLine(nullIndex3.ToString());
             StreamReader sr = new StreamReader(fs);
+            fs.Close();
         }
 
         static void Task1p1()
