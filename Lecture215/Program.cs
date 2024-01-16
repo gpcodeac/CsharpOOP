@@ -1,6 +1,6 @@
-﻿using Lecture214.Classes_and_Interfaces;
+﻿using Lecture215.Classes;
 
-namespace Lecture214
+namespace Lecture215
 {
     internal class Program
     {
@@ -54,45 +54,16 @@ namespace Lecture214
         static void Task1p1()
         {
             Console.WriteLine("Task1p1");
-            //Car juodasGolfas = new Car("Golfas", 20);
-            //juodasGolfas.Drive();
-            //Console.WriteLine(juodasGolfas.Fuel);
-            //Thread.Sleep(5000);
-            //juodasGolfas.Stop();
-            //Console.WriteLine(juodasGolfas.Fuel);
         }
 
         static void Task2p1()
         {
             Console.WriteLine("Task2p1");
-
-            BMWCar juodasBemve = new BMWCar("Bemve", 20);
-            juodasBemve.IsXDrive = true;
-            juodasBemve.Drive();
-            Console.WriteLine(juodasBemve.Fuel);
-            Thread.Sleep(5000);
-            juodasBemve.Stop();
-            Console.WriteLine(juodasBemve.Fuel);
-
-            AudiCar silverAudi = new AudiCar("Silke", 5);
-            silverAudi.IsQuattro = true;
-            silverAudi.Drive();
-            Console.WriteLine(silverAudi.Fuel);
-            Thread.Sleep(5000);
-            silverAudi.Stop();
-            Console.WriteLine(silverAudi.Fuel);
         }
 
         static void Task3p1()
         {
-            Console.WriteLine("Task3p1");
-            AudiCar silverAudi = new AudiCar("Silke", 5);
-            BMWCar juodasBemve = new BMWCar("Bemve", 20);
-            CarComparer comparer = new CarComparer();
-            Console.WriteLine(comparer.Compare(silverAudi, juodasBemve));
 
-            AudiCar silverAudi2 = null;
-            Console.WriteLine(comparer.Compare(silverAudi2, juodasBemve));
         }
     }
 }

@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture212", "Lecture212\Le
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture213", "Lecture213\Lecture213.csproj", "{664303C0-478D-44F1-9D34-4B23C6B77CDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture214", "Lecture214\Lecture214.csproj", "{B21569D7-2883-433A-8791-87650E693FDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture214", "Lecture214\Lecture214.csproj", "{B21569D7-2883-433A-8791-87650E693FDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture215", "Lecture215\Lecture215.csproj", "{63AB59B2-484C-47B8-8650-903F5C298AC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{B21569D7-2883-433A-8791-87650E693FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B21569D7-2883-433A-8791-87650E693FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B21569D7-2883-433A-8791-87650E693FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63AB59B2-484C-47B8-8650-903F5C298AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63AB59B2-484C-47B8-8650-903F5C298AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63AB59B2-484C-47B8-8650-903F5C298AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63AB59B2-484C-47B8-8650-903F5C298AC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
