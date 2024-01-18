@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lecture215.Classes
 {
-    internal interface IAnimal
+    internal interface IAnimal : IComparable<IAnimal>
     {
         public void Fight();
 
