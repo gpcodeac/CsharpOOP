@@ -67,20 +67,47 @@ namespace Lecture216_ATMApp.Classes
         }
 
 
+
+        public void Run()
+        {
+            ChooseCard();
+            if (CardExpired())
+            {
+                ScreenBuilder.CardExpiredScreen().Display(ErrCode.Warning, true);
+                Exit();
+                return;
+            }
+            else if (CardBlocked())
+            {
+                ScreenBuilder.CardBlockedScreen().Display(ErrCode.Warning, true);
+                Exit();
+                return;
+            }
+
+            CheckPin();
+            if (CardBlocked())
+            {
+                Exit();
+                return;
+            }
+
+            MainMenu();
+        }
+
+
+
         private void ChooseCard()
         {
-            Console.Clear();
             while (_insertedCard is null)
             {
-                ScreenBuilder.BuildInsertCardScreen(_cards).Display();
+                ScreenBuilder.InsertCardScreen(_cards).Display();
                 try
                 {
                     ReadCard();
                 }
                 catch (Exception e)
                 {
-                    Console.Clear();
-                    (e.Message + "\n\n").Display(ErrCode.Error);
+                    (e.Message + "\n\n").Display(ErrCode.Error, true);
                 }
             }
         }
@@ -99,14 +126,12 @@ namespace Lecture216_ATMApp.Classes
 
         private void CheckPin()
         {
-            Console.Clear();
             for (int i = 0; i < 3; i++)
             {
-                ScreenBuilder.BuildEnterPINScreen().Display();
+                ScreenBuilder.EnterPINScreen().Display();
                 if (Console.ReadLine() != _insertedCard.Pin)
                 {
-                    Console.Clear();
-                    ("Invalid PIN\n\n").Display(ErrCode.Error);
+                    ("Invalid PIN\n\n").Display(ErrCode.Error, true);
                 }
                 else
                 {
@@ -115,18 +140,11 @@ namespace Lecture216_ATMApp.Classes
 
                 if (i == 2)
                 {
-                    BlockCard();
+                    _insertedCard.CardStatus = CardStatusOptions.Blocked;
+                    ScreenBuilder.BlockingTheCardScreen().Display(ErrCode.Error, true);
                 }
             }
         }
-
-        private void BlockCard()
-        {
-            _insertedCard.CardStatus = CardStatusOptions.Blocked;
-            ("Card blocked, because wrong PIN was entered 3 times.\n\n").Display(ErrCode.Error);
-            Console.ReadLine();
-        }
-
 
         private bool CardBlocked()
         {
@@ -137,12 +155,20 @@ namespace Lecture216_ATMApp.Classes
             return false;
         }
 
+        private bool CardExpired()
+        {
+            if (_insertedCard.ExpiryDate.CompareTo(DateOnly.FromDateTime(DateTime.Today)) == -1)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void MainMenu()
         {
-            Console.Clear();
             while (true)
             {
-                ScreenBuilder.BuildMainMenuScreen().Display();
+                ScreenBuilder.MainMenuScreen().Display();
                 if (int.TryParse(Console.ReadLine(), out var option) && option > 0 && option <= 5)
                 {
                     switch (option)
@@ -151,75 +177,119 @@ namespace Lecture216_ATMApp.Classes
                             CheckBalance();
                             break;
                         case 2:
-                            Withdraw();
+                            LastTransactions();
                             break;
                         case 3:
-                            Deposit();
+                            Withdraw();
                             break;
                         case 4:
+                            Deposit();
+                            break;
+                        case 5:
                             Exit();
                             return;
                     }
                 }
                 else
                 {
-                    Console.Clear();
-                    ("Invalid option\n\n").Display(ErrCode.Error);
+                    ("Invalid option\n\n").Display(ErrCode.Error, true);
                 }
             }
         }
 
-
         private void CheckBalance()
         {
-            Console.Clear();
-            ("Your balance is: " + _insertedCard.Account.Balance + "\n\n").Display(ErrCode.Information);
+            ("Your balance is: " + _insertedCard.Account.Balance + "\n\n").Display(ErrCode.Information, true);
         }
 
-        public void Withdraw()
+        private void LastTransactions()
         {
-
+            ("Last transactions:\n\n").Display(ErrCode.Information);
+            List<string> transactions = _insertedCard.Account.GetAccountStatement().GetTransactions(5);
+            transactions.ForEach(x => x.Display());
+            Console.ReadLine();
         }
 
-        public void Deposit()
+        private void Withdraw()
         {
+            ScreenBuilder.WithdrawScreen().Display();
+            if (!decimal.TryParse(Console.ReadLine(), out var amount))
+            {
+                ("Invalid amount.\n\n").Display(ErrCode.Error, true);
+                return;
+            }
 
+            try
+            {
+                _insertedCard.Account.Withdraw(amount);
+            }
+            catch (Exception e)
+            {
+                (e.Message + "\n\n").Display(ErrCode.Error, true);
+                return;
+            }
+
+            ("Please take your money\n\n").Display(ErrCode.Information, true);
         }
 
+        private void Deposit()
+        {
+            ScreenBuilder.DepositScreen().Display();
+            string[] notes = Console.ReadLine().Replace(" ", "").Split(',');
+            decimal amount = 0;
+            foreach (var a in notes)
+            {
+                if (decimal.TryParse(a, out decimal note))
+                {
+                    amount += note;
+                }
+                else
+                {
+                    ("Unrecognised bank note.\n\n").Display(ErrCode.Error, true);
+                    return;
+                }
+            }
 
+            try
+            {
+                _insertedCard.Account.Deposit(amount);
+            }
+            catch (Exception e)
+            {
+                (e.Message + "\n\n").Display(ErrCode.Error, true);
+                return;
+            }
+
+            ("Money deposited.\n\n").Display(ErrCode.Information, true);
+        }
 
         private void Exit()
         {
-            Console.Clear();
-            ScreenBuilder.EjectingCardScreen().Display(ErrCode.Information);
+            ScreenBuilder.EjectingCardScreen().Display(ErrCode.Information, true);
             _insertedCard = null;
 
-            SaveToDb();
-            Console.ReadLine();
+            try
+            {
+                SaveToDb();
+            }
+            catch (Exception e)
+            {
+                (e.Message + "\n\n").Display(ErrCode.Error, true);
+            }
         }
 
         private void SaveToDb()
         {
             var jsoncards = JsonSerializer.Serialize(_cards);
-            File.WriteAllText("AlmostDatabase/Cards.json", jsoncards);
+            //File.WriteAllText("AlmostDatabase/Cards.json", jsoncards);
             var jsoncustomers = JsonSerializer.Serialize(_customers);
-            File.WriteAllText("AlmostDatabase/Customers.json", jsoncustomers);
+            //File.WriteAllText("AlmostDatabase/Customers.json", jsoncustomers);
             var jsonaccounts = JsonSerializer.Serialize(_accounts);
-            File.WriteAllText("AlmostDatabase/Accounts.json", jsonaccounts);
+            //File.WriteAllText("AlmostDatabase/Accounts.json", jsonaccounts);
         }
 
 
-        public void Run()
-        {
-            ChooseCard();
-            CheckPin();
-            if (CardBlocked())
-            {
-                Exit();
-                return;
-            }
-            MainMenu();
-        }
+
 
 
 
@@ -236,8 +306,8 @@ namespace Lecture216_ATMApp.Classes
         //exit button should be available in PIN menu
         //NOT NEEDED: if pin is correct, from card number, the account number is extracted - is this possible ? how to link back form card to account?
         //NOT NEEDED: account number is saved locally during the "operation" and is used to do further operations
-        //menu to withdraw, deposit, see balance, see trans history exit
-        //validations to check if no cents for withdrawal or deposit, etc
+        //DONE: menu to withdraw, deposit, see balance, see trans history exit
+        //DONE: validations to check if no cents for withdrawal or deposit, etc
         //add transactions to hist when executing
 
 

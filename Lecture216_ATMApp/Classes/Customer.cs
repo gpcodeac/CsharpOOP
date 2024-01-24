@@ -37,6 +37,7 @@ namespace Lecture216_ATMApp.Classes
 
         public bool MaritalStatus { get; set; }
 
+        [JsonIgnore]
         public List<Account> Accounts { get; set; } = new List<Account>();
 
 

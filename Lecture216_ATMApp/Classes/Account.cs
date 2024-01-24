@@ -40,8 +40,10 @@ namespace Lecture216_ATMApp.Classes
 
         public string Owner { get; set; }
 
+        [JsonIgnore]
         public Customer Customer { get; set; }
 
+        [JsonIgnore]
         public List<Card> Cards { get; set; } = new List<Card>();
 
 
@@ -72,6 +74,14 @@ namespace Lecture216_ATMApp.Classes
 
         public void Withdraw(decimal amount)
         {
+            try
+            {
+                Validations.WithdrawValidations(amount, this);
+            }
+            catch (ArgumentException e)
+            {
+                throw e;
+            }
             Balance -= amount;
             RecordTransaction(AccountNumber, -amount);
         }

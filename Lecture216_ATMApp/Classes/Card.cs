@@ -66,6 +66,7 @@ namespace Lecture216_ATMApp.Classes
 
         public string AccountNumber { get; set; }
 
+        [JsonIgnore]
         public Account Account { get; set; }
 
 

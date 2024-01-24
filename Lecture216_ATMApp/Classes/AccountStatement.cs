@@ -39,20 +39,7 @@ namespace Lecture216_ATMApp.Classes
         private DateTime CreationTime { get; set; }
 
 
-        public void PrintStatement()
-        {
-            foreach (var transaction in Transactions)
-            {
-                Console.WriteLine(transaction);
-            }
-        }
-
-        public override string ToString()
-        {
-            return Transactions.ToString();
-        }
-
-        public void SaveStatement()
+        public void Save()
         {
             string path = $"{AccountNumber}_statement_{CreationTime}.txt";
             File.WriteAllLines(path, Transactions);
@@ -71,5 +58,19 @@ namespace Lecture216_ATMApp.Classes
             }
             return Transactions.Where(x => DateOnly.Parse(x.Split(',')[2]) >= dateFrom && DateOnly.Parse(x.Split(',')[2]) <= dateUntil).ToList();
         }
+
+        public void Print()
+        {
+            foreach (var transaction in Transactions)
+            {
+                Console.WriteLine(transaction);
+            }
+        }
+
+        public override string ToString()
+        {
+            return Transactions.ToString();
+        }
+
     }
 }
