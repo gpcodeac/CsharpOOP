@@ -59,17 +59,17 @@ namespace Lecture215
             List<IAnimal> listIAnimal = new List<IAnimal>();
             List<IFish> listIFish = new List<IFish>();
             List<IMammal> listIMammal = new List<IMammal>();
-            
+
             Cat cat = new Cat();
             Dog dog = new Dog();
             Bass bass = new Bass();
             Carp carp = new Carp();
-            
+
             listIAnimal.Add(bass);
             listIAnimal.Add(carp);
             listIAnimal.Add(cat);
             listIAnimal.Add(dog);
-            
+
             listIFish.Add(bass);
             listIFish.Add(carp);
             //listIFish.Add(cat);
@@ -130,7 +130,7 @@ namespace Lecture215
             Console.WriteLine("Task2p1\n");
             try
             {
-                Triangle triangle = new Triangle(3,4,5);
+                Triangle triangle = new Triangle(3, 4, 5);
             }
             catch (ArgumentOutOfRangeException e)
             {
@@ -138,7 +138,7 @@ namespace Lecture215
             }
             Console.WriteLine("next instruciton");
 
-          
+
             Quadrilateral quadrilateral = new Quadrilateral(4, 3, 4, 3, 5);
             Console.WriteLine("Area: " + quadrilateral.GetArea());
             Quadrilateral quadrilateral2 = new Quadrilateral(3, 5, 3, 5, 4);
@@ -154,7 +154,25 @@ namespace Lecture215
 
         static void Task3p1()
         {
+            foreach (var b in Enum.GetValues(typeof(WeekDays)))
+            {
+                Console.WriteLine(b);
+            }
+            
+            Console.WriteLine();
 
+            foreach (var b in Enum.GetValues(typeof(Months)))
+            {
+                Console.WriteLine(b);
+            }
+
+            Enum.TryParse("Monday", out WeekDays day);
         }
+
+        enum Months
+        {
+            January, February, March, April, May, June, July, August, September, October, November, December
+        }
+
     }
 }
