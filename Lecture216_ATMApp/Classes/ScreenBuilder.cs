@@ -38,6 +38,32 @@ namespace Lecture216_ATMApp.Classes
             return text;
         }
 
+        public static string BuildEnterPINScreen()
+        {
+            string text = "Please enter the PIN: ";
+            return text;
+        }
+
+        public static string EjectingCardScreen()
+        {
+            string text = "Ejecting the card...";
+            return text;
+        }
+
+        public static string BuildMainMenuScreen()
+        {
+            string text = """
+                1. Remaining Balance
+                2. Last Transactions
+                3. Withdraw
+                4. Deposit
+                5. Exit
+                
+                Option: 
+                """;
+            return text;
+        }
+
         public static void Display(this string text, ErrCode code = ErrCode.OK)
         {
             switch(code)
@@ -61,9 +87,5 @@ namespace Lecture216_ATMApp.Classes
             Console.Write(text);
         }
 
-        public static void BuildScreen(string input)
-        {
-            Console.WriteLine(input);
-        }
     }
 }

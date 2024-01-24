@@ -9,16 +9,11 @@ namespace Lecture216_ATMApp
     {
         static void Main(string[] args)
         {
-            ATM aTM = new();
-            //aTM.Initialize();
-            aTM.Run();
-            //aTM.TestPrint();
-            
-
-
-            
-            //ATM atm = new();
-            //atm.Run();
+            while(true)
+            {
+                ATM aTM = new();
+                aTM.Run();
+            }
         }
     }
 }
