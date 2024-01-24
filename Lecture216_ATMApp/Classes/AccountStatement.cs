@@ -8,30 +8,13 @@ namespace Lecture216_ATMApp.Classes
         public AccountStatement(string accountNumber)
         {
             AccountNumber = accountNumber;
-            string path = "AlmostDatabase/Transactions.txt";
+            string path = "../../../AlmostDatabase/Transactions.txt";
             List<string> lines = File.ReadAllLines(path).ToList();
             Transactions = lines.Where(x => x.Split(',').Contains(accountNumber))
                                 .OrderByDescending(x => x.Split(',')[2])
                                 .ToList();
             CreationTime = DateTime.Now;
         }
-
-        //public AccountStatement(string accountNumber, DateOnly dateFrom, DateOnly? dateUntil)
-        //{
-        //    AccountNumber = accountNumber;
-        //    if (dateUntil is null)
-        //    {
-        //        dateUntil = DateOnly.FromDateTime(DateTime.Today);
-        //    }
-        //    string path = "AlmostDatabase/Transactions.txt";
-        //    List<string> lines = File.ReadAllLines(path).ToList();
-        //    Transactions = lines.Where(x => x.Split(',').Contains(accountNumber)
-        //                                    && DateOnly.Parse(x.Split(',')[2]) >= dateFrom
-        //                                    && DateOnly.Parse(x.Split(',')[2]) <= dateUntil)
-        //                        .OrderByDescending(x => x.Split(',')[2])
-        //                        .ToList();
-        //    CreationTime = DateTime.Now;
-        //}
 
 
         private List<string> Transactions { get; set; }
@@ -56,7 +39,7 @@ namespace Lecture216_ATMApp.Classes
             {
                 dateUntil = DateOnly.FromDateTime(DateTime.Today);
             }
-            return Transactions.Where(x => DateOnly.Parse(x.Split(',')[2]) >= dateFrom && DateOnly.Parse(x.Split(',')[2]) <= dateUntil).ToList();
+            return Transactions.Where(x => DateOnly.Parse(x.Split(',')[2].Split(' ')[0]) >= dateFrom && DateOnly.Parse(x.Split(',')[2].Split(' ')[0]) <= dateUntil).ToList();
         }
 
         public void Print()

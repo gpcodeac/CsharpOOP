@@ -1,62 +1,62 @@
-﻿[
-    {
-        "GUID": "2c5457cb-271c-4240-bad6-3157013dd8ab",
-        "PIN": "1212",
-        "ExpiryDate": "2019-01-01",
-        "CRC": "121",
-        "CardNumber": "123456789012345",
-        "CardStatus": "Expired",
-        "CardType": "MasterCard",
-        "AccountNumber": "DE71510200008982764328"
-    },
-    {
-        "GUID": "0b62c529-98fe-4c16-92f8-fd89794b6ec7",
-        "PIN": "2323",
-        "ExpiryDate": "2029-02-02",
-        "CRC": "332",
-        "CardNumber": "123456789010101",
-        "CardStatus": "Active",
-        "CardType": "Visa",
-        "AccountNumber": "DE71510200008982764328"
-    },
-    {
-        "GUID": "8ffe9219-3201-46a7-8f3b-40eb84271932",
-        "PIN": "3434",
-        "ExpiryDate": "2029-02-02",
-        "CRC": "443",
-        "CardNumber": "123456789020202",
-        "CardStatus": "Active",
-        "CardType": "MasterCard",
-        "AccountNumber": "DE77740201507415659431"
-    },
-    {
-        "GUID": "6974d626-dbe2-4419-9075-97a96a5778fa",
-        "PIN": "0000",
-        "ExpiryDate": "2025-05-05",
-        "CRC": "345",
-        "CardNumber": "123456789030405",
-        "CardStatus": "Active",
-        "CardType": "MasterCard",
-        "AccountNumber": "DE77740201507415659431"
-    },
-    {
-        "GUID": "779d9d5b-b81a-4eae-aebe-eb7b90bf5f43",
-        "PIN": "9999",
-        "ExpiryDate": "2029-09-09",
-        "CRC": "789",
-        "CardNumber": "123456789070809",
-        "CardStatus": "Blocked",
-        "CardType": "Visa",
-        "AccountNumber": "DE94510200003726117216"
-    },
-    {
-        "GUID": "99195c3d-c691-4457-a5fc-46f6de45cc1f",
-        "PIN": "4545",
-        "ExpiryDate": "2024-02-29",
-        "CRC": "555",
-        "CardNumber": "123456789002200",
-        "CardStatus": "Active",
-        "CardType": "MasterCard",
-        "AccountNumber": "DE21201202003638543275"
-    }
+[
+  {
+    "GUID": "2c5457cb-271c-4240-bad6-3157013dd8ab",
+    "PIN": "1212",
+    "ExpiryDate": "2019-01-01",
+    "CRC": "121",
+    "CardNumber": "123456789012345",
+    "CardStatus": "Expired",
+    "CardType": "MasterCard",
+    "AccountNumber": "DE71510200008982764328"
+  },
+  {
+    "GUID": "0b62c529-98fe-4c16-92f8-fd89794b6ec7",
+    "PIN": "2323",
+    "ExpiryDate": "2029-02-02",
+    "CRC": "332",
+    "CardNumber": "123456789010101",
+    "CardStatus": "Active",
+    "CardType": "Visa",
+    "AccountNumber": "DE71510200008982764328"
+  },
+  {
+    "GUID": "8ffe9219-3201-46a7-8f3b-40eb84271932",
+    "PIN": "3434",
+    "ExpiryDate": "2029-02-02",
+    "CRC": "443",
+    "CardNumber": "123456789020202",
+    "CardStatus": "Active",
+    "CardType": "MasterCard",
+    "AccountNumber": "DE77740201507415659431"
+  },
+  {
+    "GUID": "6974d626-dbe2-4419-9075-97a96a5778fa",
+    "PIN": "0000",
+    "ExpiryDate": "2025-05-05",
+    "CRC": "345",
+    "CardNumber": "123456789030405",
+    "CardStatus": "Active",
+    "CardType": "MasterCard",
+    "AccountNumber": "DE77740201507415659431"
+  },
+  {
+    "GUID": "779d9d5b-b81a-4eae-aebe-eb7b90bf5f43",
+    "PIN": "9999",
+    "ExpiryDate": "2029-09-09",
+    "CRC": "789",
+    "CardNumber": "123456789070809",
+    "CardStatus": "Active",
+    "CardType": "Visa",
+    "AccountNumber": "DE94510200003726117216"
+  },
+  {
+    "GUID": "99195c3d-c691-4457-a5fc-46f6de45cc1f",
+    "PIN": "4545",
+    "ExpiryDate": "2024-02-29",
+    "CRC": "555",
+    "CardNumber": "123456789002200",
+    "CardStatus": "Blocked",
+    "CardType": "MasterCard",
+    "AccountNumber": "DE21201202003638543275"
+  }
 ]

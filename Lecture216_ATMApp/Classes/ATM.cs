@@ -2,6 +2,7 @@
 using System.Text.Json;
 using Lecture216_ATMApp.Utils;
 using Lecture216_ATMApp.Classes;
+using System.Xml;
 
 namespace Lecture216_ATMApp.Classes
 {
@@ -16,54 +17,6 @@ namespace Lecture216_ATMApp.Classes
         public ATM()
         {
             Initialize();
-        }
-
-        private void Initialize()
-        {
-            var jsoncards = File.ReadAllText("AlmostDatabase/Cards.json");
-            var cards = JsonSerializer.Deserialize<List<Card>>(jsoncards);
-            var jsoncustomers = File.ReadAllText("AlmostDatabase/Customers.json");
-            var customers = JsonSerializer.Deserialize<List<Customer>>(jsoncustomers);
-            var jsonaccounts = File.ReadAllText("AlmostDatabase/Accounts.json");
-            var accounts = JsonSerializer.Deserialize<List<Account>>(jsonaccounts);
-            LinkObjects(cards, customers, accounts);
-            _cards = cards;
-            _customers = customers;
-            _accounts = accounts;
-        }
-
-        private void LinkObjects(List<Card> cards, List<Customer> customers, List<Account> accounts)
-        {
-            foreach (var card in cards)
-            {
-                accounts.Find(x => x.AccountNumber == card.AccountNumber).Cards.Add(card);
-                card.Account = accounts.Find(x => x.AccountNumber == card.AccountNumber);
-            }
-
-            foreach (var account in accounts)
-            {
-                customers.Find(x => x.PersonalID == account.Owner).Accounts.Add(account);
-                account.Customer = customers.Find(x => x.PersonalID == account.Owner);
-            }
-        }
-
-        public void TestPrint()
-        {
-            foreach (var customer in _customers)
-            {
-                customer.PrintAll();
-                Console.WriteLine();
-            }
-            foreach (var account in _accounts)
-            {
-                account.PrintAll();
-                Console.WriteLine();
-            }
-            foreach (var card in _cards)
-            {
-                card.PrintAll();
-                Console.WriteLine();
-            }
         }
 
 
@@ -204,10 +157,8 @@ namespace Lecture216_ATMApp.Classes
 
         private void LastTransactions()
         {
-            ("Last transactions:\n\n").Display(ErrCode.Information);
             List<string> transactions = _insertedCard.Account.GetAccountStatement().GetTransactions(5);
-            transactions.ForEach(x => x.Display());
-            Console.ReadLine();
+            ScreenBuilder.RecentTransactionsScreen(transactions).Display(ErrCode.Information, true);
         }
 
         private void Withdraw()
@@ -280,20 +231,17 @@ namespace Lecture216_ATMApp.Classes
 
         private void SaveToDb()
         {
-            var jsoncards = JsonSerializer.Serialize(_cards);
-            //File.WriteAllText("AlmostDatabase/Cards.json", jsoncards);
-            var jsoncustomers = JsonSerializer.Serialize(_customers);
-            //File.WriteAllText("AlmostDatabase/Customers.json", jsoncustomers);
-            var jsonaccounts = JsonSerializer.Serialize(_accounts);
-            //File.WriteAllText("AlmostDatabase/Accounts.json", jsonaccounts);
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            var jsoncards = JsonSerializer.Serialize(_cards, options);
+            File.WriteAllText("../../../AlmostDatabase/Cards.json", jsoncards);
+            var jsoncustomers = JsonSerializer.Serialize(_customers, options);
+            File.WriteAllText("../../../AlmostDatabase/Customers.json", jsoncustomers);
+            var jsonaccounts = JsonSerializer.Serialize(_accounts, options);
+            File.WriteAllText("../../../AlmostDatabase/Accounts.json", jsonaccounts);
         }
-
-
-
-
-
-
-
 
 
 
@@ -310,7 +258,53 @@ namespace Lecture216_ATMApp.Classes
         //DONE: validations to check if no cents for withdrawal or deposit, etc
         //add transactions to hist when executing
 
+        private void Initialize()
+        {
+            var jsoncards = File.ReadAllText("../../../AlmostDatabase/Cards.json");
+            var cards = JsonSerializer.Deserialize<List<Card>>(jsoncards);
+            var jsoncustomers = File.ReadAllText("../../../AlmostDatabase/Customers.json");
+            var customers = JsonSerializer.Deserialize<List<Customer>>(jsoncustomers);
+            var jsonaccounts = File.ReadAllText("../../../AlmostDatabase/Accounts.json");
+            var accounts = JsonSerializer.Deserialize<List<Account>>(jsonaccounts);
+            LinkObjects(cards, customers, accounts);
+            _cards = cards;
+            _customers = customers;
+            _accounts = accounts;
+        }
 
+        private void LinkObjects(List<Card> cards, List<Customer> customers, List<Account> accounts)
+        {
+            foreach (var card in cards)
+            {
+                accounts.Find(x => x.AccountNumber == card.AccountNumber).Cards.Add(card);
+                card.Account = accounts.Find(x => x.AccountNumber == card.AccountNumber);
+            }
+
+            foreach (var account in accounts)
+            {
+                customers.Find(x => x.PersonalID == account.Owner).Accounts.Add(account);
+                account.Customer = customers.Find(x => x.PersonalID == account.Owner);
+            }
+        }
+
+        public void TestPrint()
+        {
+            foreach (var customer in _customers)
+            {
+                customer.PrintAll();
+                Console.WriteLine();
+            }
+            foreach (var account in _accounts)
+            {
+                account.PrintAll();
+                Console.WriteLine();
+            }
+            foreach (var card in _cards)
+            {
+                card.PrintAll();
+                Console.WriteLine();
+            }
+        }
 
     }
 }

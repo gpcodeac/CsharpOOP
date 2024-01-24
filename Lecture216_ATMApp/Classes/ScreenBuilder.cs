@@ -71,6 +71,12 @@ namespace Lecture216_ATMApp.Classes
             return text;
         }
 
+        public static string RecentTransactionsScreen(List<string> transactions)
+        {
+            string text = "The last 5 transactions:\n\n" + string.Join("\n", transactions); 
+            return text;
+        }
+
         public static void Display(this string text, ErrCode code = ErrCode.OK, bool hold = false)
         {
             Console.Clear();

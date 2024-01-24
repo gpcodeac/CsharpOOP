@@ -50,7 +50,7 @@ namespace Lecture216_ATMApp.Classes
 
         private void GenerateAccountNumber()
         {
-            string path = "AlmostDatabase/ValidIBANs.txt";
+            string path = "../../../AlmostDatabase/ValidIBANs.txt";
             string[] IBANs = File.ReadAllLines(path);
             AccountNumber = IBANs[0];
             File.WriteAllLines(path, IBANs.Skip(1).ToArray());
@@ -58,12 +58,13 @@ namespace Lecture216_ATMApp.Classes
 
         private void RecordTransaction(string accountNumber, decimal amount)
         {
-            string path = "AlmostDatabase/Transactions.txt";
+            string path = "../../../AlmostDatabase/Transactions.txt";
             string line = string.Join(',', accountNumber, amount, DateTime.Now.ToString());
-            using (StreamWriter sr = File.AppendText(path))
-            {
-                sr.WriteLine(line);
-            } 
+            File.AppendAllText(path, line + '\n');
+            //using (StreamWriter sr = File.AppendText(path))
+            //{
+            //    sr.WriteLine(line);
+            //} 
         }
 
         public void Deposit(decimal amount)
@@ -109,6 +110,10 @@ namespace Lecture216_ATMApp.Classes
             Card card = new(this);
             Cards.Add(card);
         }
+
+
+
+
 
         public override string ToString()
         {

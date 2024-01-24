@@ -1,38 +1,38 @@
-﻿[
-    {
-        "Name": "Benefit",
-        "Surname": "Cornstarch",
-        "PID": "37607190147",
-        "DOB": "1976-07-19",
-        "Address": "London, UK",
-        "Occupation": "Sherlock Holmes",
-        "MaritalStatus": false
-    },
-    {
-        "Name": "Contradict", 
-        "Surname": "Bumberpatch",
-        "PID": "37607197410",
-        "DOB": "1976-07-19",
-        "Address": "London, UK",
-        "Occupation": "Strange doctor",
-        "MaritalStatus": true
-    },
-    {
-        "Name": "Noodly",
-        "Surname": "Postman",
-        "PID": "48106093131",
-        "DOB": "1981-06-09",
-        "Address": "Los Angeles, California, USA",
-        "Occupation": "Galactic senator",
-        "MaritalStatus": true
-    },
-    {
-        "Name": "Crisp",
-        "Surname": "Rat",
-        "PID": "37906219797",
-        "DOB": "1979-06-21",
-        "Address": "Los Angeles, California, USA",
-        "Occupation": "The Star Lord",
-        "MaritalStatus": false
-    }
+[
+  {
+    "Name": "Benefit",
+    "Surname": "Cornstarch",
+    "PID": "37607190147",
+    "DOB": "1976-07-19",
+    "Address": "London, UK",
+    "Occupation": "Sherlock Holmes",
+    "MaritalStatus": false
+  },
+  {
+    "Name": "Contradict",
+    "Surname": "Bumberpatch",
+    "PID": "37607197410",
+    "DOB": "1976-07-19",
+    "Address": "London, UK",
+    "Occupation": "Strange doctor",
+    "MaritalStatus": true
+  },
+  {
+    "Name": "Noodly",
+    "Surname": "Postman",
+    "PID": "48106093131",
+    "DOB": "1981-06-09",
+    "Address": "Los Angeles, California, USA",
+    "Occupation": "Galactic senator",
+    "MaritalStatus": true
+  },
+  {
+    "Name": "Crisp",
+    "Surname": "Rat",
+    "PID": "37906219797",
+    "DOB": "1979-06-21",
+    "Address": "Los Angeles, California, USA",
+    "Occupation": "The Star Lord",
+    "MaritalStatus": false
+  }
 ]
