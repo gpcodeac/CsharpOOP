@@ -5,10 +5,7 @@ namespace Lecture216_ATMApp.Classes
 {
     internal class Customer
     {
-        
-        //private List<Account> _accounts;
 
-        
         [JsonConstructor]
         public Customer(string name, string surname, string personalID, DateOnly dateOfBirth, string address, string occupation = "", bool maritalStatus = false)
         {

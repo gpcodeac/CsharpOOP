@@ -1,6 +1,6 @@
-﻿using Lecture216_ATMApp.Utils;
+﻿using Lecture216_ATMApp.Classes;
 
-namespace Lecture216_ATMApp.Classes
+namespace Lecture216_ATMApp.Utils
 {
     internal static class ScreenBuilder
     {
@@ -9,7 +9,7 @@ namespace Lecture216_ATMApp.Classes
             string text = "Hello. Please insert the card.\n\n";
             for (int i = 0; i < cards.Count; i++)
             {
-                text += i+1 + ". " + cards[i].Guid + '\n';
+                text += i + 1 + ". " + cards[i].Guid + '\n';
             }
             text = text + "\nOption: ";
             return text;
@@ -73,14 +73,14 @@ namespace Lecture216_ATMApp.Classes
 
         public static string RecentTransactionsScreen(List<string> transactions)
         {
-            string text = "The last 5 transactions:\n\n" + string.Join("\n", transactions); 
+            string text = "The last 5 transactions:\n\n" + string.Join("\n", transactions);
             return text;
         }
 
         public static void Display(this string text, ErrCode code = ErrCode.OK, bool hold = false)
         {
             Console.Clear();
-            switch(code)
+            switch (code)
             {
                 case ErrCode.OK:
                     Console.ForegroundColor = ConsoleColor.White;

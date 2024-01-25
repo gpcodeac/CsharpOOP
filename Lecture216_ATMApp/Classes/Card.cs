@@ -70,10 +70,6 @@ namespace Lecture216_ATMApp.Classes
         public Account Account { get; set; }
 
 
-        private void AddToDb()
-        {
-            Console.WriteLine("hello");
-        }
 
         public override string ToString()
         {

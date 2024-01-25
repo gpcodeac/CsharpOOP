@@ -17,7 +17,7 @@
     <None Update="AlmostDatabase\Customers.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="AlmostDatabase\test.json">
+    <None Update="Testing\test.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="AlmostDatabase\Transactions.txt">

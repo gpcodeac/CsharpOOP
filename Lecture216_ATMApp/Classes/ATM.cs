@@ -1,7 +1,6 @@
 ﻿
 using System.Text.Json;
 using Lecture216_ATMApp.Utils;
-using Lecture216_ATMApp.Classes;
 using System.Xml;
 
 namespace Lecture216_ATMApp.Classes
@@ -256,7 +255,7 @@ namespace Lecture216_ATMApp.Classes
         //NOT NEEDED: account number is saved locally during the "operation" and is used to do further operations
         //DONE: menu to withdraw, deposit, see balance, see trans history exit
         //DONE: validations to check if no cents for withdrawal or deposit, etc
-        //add transactions to hist when executing
+        //DONE: add transactions to hist when executing
 
         private void Initialize()
         {

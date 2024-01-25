@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Lecture216_ATMApp.Classes
+namespace Lecture216_ATMApp.Testing
 {
     internal class Actor
     {

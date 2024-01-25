@@ -1,5 +1,4 @@
-﻿
-namespace Lecture216_ATMApp.Classes
+﻿namespace Lecture216_ATMApp.Testing
 {
     public class AccountTest
     {
