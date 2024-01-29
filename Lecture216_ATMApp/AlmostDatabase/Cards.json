@@ -15,7 +15,7 @@
     "ExpiryDate": "2029-02-02",
     "CRC": "332",
     "CardNumber": "123456789010101",
-    "CardStatus": "Active",
+    "CardStatus": "Blocked",
     "CardType": "Visa",
     "AccountNumber": "DE71510200008982764328"
   },

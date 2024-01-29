@@ -37,5 +37,18 @@ namespace Lecture216_ATMApp.Utils
                 throw new ArgumentException("You have reached the limit of 10 transactions per day.");
             }
         }
+
+        public static void TransferValidations(decimal amount, Account account)
+        {
+            if (amount <= 0)
+            {
+                throw new ArgumentException("Amount must be greater than 0.");
+            }
+
+            if (amount > account.Balance)
+            {
+                throw new ArgumentException("Not enough balance on the account.");
+            }
+        }
     }
 }

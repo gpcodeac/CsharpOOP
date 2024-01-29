@@ -52,7 +52,8 @@ namespace Lecture216_ATMApp.Utils
                 2. Last Transactions
                 3. Withdraw
                 4. Deposit
-                5. Exit
+                5. Transfer
+                6. Exit
                 
                 Option: 
                 """;
@@ -68,6 +69,18 @@ namespace Lecture216_ATMApp.Utils
         public static string DepositScreen()
         {
             string text = "Please enter the bank notes you want to deposit: ";
+            return text;
+        }
+
+        public static string TransferScreenAccount()
+        {
+            string text = "Please enter the Account you want to transfer to: ";
+            return text;
+        }
+
+        public static string TransferScreenAmount()
+        {
+            string text = "Please enter the amount you want to transfer: ";
             return text;
         }
 

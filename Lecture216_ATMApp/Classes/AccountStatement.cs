@@ -24,7 +24,7 @@ namespace Lecture216_ATMApp.Classes
 
         public void Save()
         {
-            string path = $"{AccountNumber}_statement_{CreationTime}.txt";
+            string path = $"../../../{AccountNumber}_statement_{CreationTime}.txt";
             File.WriteAllLines(path, Transactions);
         }
 

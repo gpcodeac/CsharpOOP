@@ -88,8 +88,16 @@ namespace Lecture216_ATMApp.Classes
             RecordTransaction(AccountNumber, -amount);
         }
 
-        public void Transfer(decimal amount, Account destinationAccount) //maybe just use account number?
+        public void Transfer(decimal amount, Account destinationAccount) 
         {
+            try
+            {
+                Validations.TransferValidations(amount, this);
+            }
+            catch (ArgumentException e)
+            {
+                throw e;
+            }
             Balance -= amount;
             RecordTransaction(AccountNumber, -amount);
             destinationAccount.Balance += amount;

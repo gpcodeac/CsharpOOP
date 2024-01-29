@@ -121,7 +121,7 @@ namespace Lecture216_ATMApp.Classes
             while (true)
             {
                 ScreenBuilder.MainMenuScreen().Display();
-                if (int.TryParse(Console.ReadLine(), out var option) && option > 0 && option <= 5)
+                if (int.TryParse(Console.ReadLine(), out var option) && option > 0 && option <= 6)
                 {
                     switch (option)
                     {
@@ -138,6 +138,9 @@ namespace Lecture216_ATMApp.Classes
                             Deposit();
                             break;
                         case 5:
+                            Transfer();
+                            break;
+                        case 6:
                             Exit();
                             return;
                     }
@@ -213,6 +216,37 @@ namespace Lecture216_ATMApp.Classes
             ("Money deposited.\n\n").Display(ErrCode.Information, true);
         }
 
+        private void Transfer()
+        {
+            ScreenBuilder.TransferScreenAccount().Display();
+            string recipientAccount = Console.ReadLine();
+            Account? recipient = _accounts.Find(x => x.AccountNumber == recipientAccount);
+            if (recipient == null)
+            {
+                ("Invalid account.\n\n").Display(ErrCode.Error, true);
+                return;
+            }
+
+            ScreenBuilder.TransferScreenAmount().Display();
+            if (!decimal.TryParse(Console.ReadLine(), out var amount))
+            {
+                ("Invalid amount.\n\n").Display(ErrCode.Error, true);
+                return;
+            }
+
+            try
+            {
+                _insertedCard.Account.Transfer(amount, recipient);
+            }
+            catch (Exception e)
+            {
+                (e.Message + "\n\n").Display(ErrCode.Error, true);
+                return;
+            }
+
+            ("Money transferred.\n\n").Display(ErrCode.Information, true);
+        }
+
         private void Exit()
         {
             ScreenBuilder.EjectingCardScreen().Display(ErrCode.Information, true);
@@ -249,7 +283,7 @@ namespace Lecture216_ATMApp.Classes
         //DONE: the card is put in the ATM
         //DONE: the card is read, guid compared
         //DONE: pin prompted
-        //DONE :pin is compared
+        //DONE: pin is compared
         //exit button should be available in PIN menu
         //NOT NEEDED: if pin is correct, from card number, the account number is extracted - is this possible ? how to link back form card to account?
         //NOT NEEDED: account number is saved locally during the "operation" and is used to do further operations
