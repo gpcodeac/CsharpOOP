@@ -41,7 +41,7 @@ namespace Lecture214.Classes_and_Interfaces
                 Console.WriteLine("Driving a car.");
                 DateTime startTime = DateTime.Now;
                 _isDriving = true;
-                await Task.Run(() =>
+                Task.Run(() =>
                 {
                     double fuelConsumptionCheckpoint = 0;
                     double fuelConsumption = 0;
@@ -68,6 +68,7 @@ namespace Lecture214.Classes_and_Interfaces
                         }
                     }
                 });
+                Console.WriteLine("Driving without await.");
             }
             else
             {
