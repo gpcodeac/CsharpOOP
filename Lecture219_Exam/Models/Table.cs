@@ -9,7 +9,7 @@ namespace Lecture219_Exam.Models
     internal class Table
     {
         public int Id { get; set; }
-        public int Seats { get; set; }
+        public int Capacity { get; set; }
         public bool IsAvailable { get; set; }
     }
 }

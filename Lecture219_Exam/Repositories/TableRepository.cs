@@ -32,7 +32,7 @@ namespace Lecture219_Exam.Repositories
             Table? existingTable = _tables.FirstOrDefault(t => t.Id == table.Id); //should I replace an object or update its properties?
             if (existingTable != null)
             {
-                existingTable.Seats = table.Seats;
+                existingTable.Capacity = table.Capacity;
                 existingTable.IsAvailable = table.IsAvailable;
             }
         }

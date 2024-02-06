@@ -12,7 +12,7 @@ namespace Lecture219_Exam.Models
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public Employee Employee { get; set; }  = new Employee();
-        public List<IMenuItem> Items { get; set; }
+        public List<IMenuItem> Items { get; set; } = new List<IMenuItem>(); 
         public Table Table { get; set; } = new Table();
     }
 }
