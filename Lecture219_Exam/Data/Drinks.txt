@@ -1,0 +1,19 @@
+﻿Svyturio Extra,3.50
+Guinness,5.50
+Kilkenny,4.50
+Kronenbourg 1664,4.50
+Leffe Blonde,4.50
+Leffe Brune,4.50
+Urquell Pilsner,4.00
+Coca Cola,2.00
+Coca Cola Zero,2.00
+Fanta,2.00
+Sprite,2.00
+Lipton Ice Tea,2.00
+Red Bull,3.00
+Red Bull Sugar Free,3.00
+Still Water,2.00
+Sparkling Water,2.00
+Orange Juice,2.00
+Apple Juice,2.00
+Cranberry Juice,2.00

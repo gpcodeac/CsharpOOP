@@ -1,0 +1,9 @@
+﻿var vs T in FoodRepository/DrinkRepository Update method?
+
+Update methos in repos - replace object with new one, or update properties of existing one?
+
+Remove all objects from repo list, or only first? Where is the uniqueness being handled in code or db?
+
+UI layer should not have any interfaces, is that correct?
+
+Still, regarding combining foods and drinks. I cannot do them in the ViewModel, because I would like them to manage as part of the order and then save them to DB? But not as itself, but as a link from an order.

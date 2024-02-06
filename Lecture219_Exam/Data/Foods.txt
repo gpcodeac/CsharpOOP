@@ -1,0 +1,16 @@
+﻿Burger classic,7.00
+Burger with cheese,7.50
+Burger with bacon,8.50
+Kebab with chicken,5.50
+Kebab with pork,5.50
+Pizza Margherita,7.00
+Pizza Pepperoni,8.50
+Pizza Diavola,9.00
+HotDog,4.00
+Pierogi,6.00
+French fries,3.00
+Garlic bread,3.00
+Ketchup,0.25
+Mayonnaise,0.25
+Mustard,0.25
+Garlic sauce,0.25

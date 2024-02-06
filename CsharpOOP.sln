@@ -35,7 +35,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture215", "Lecture215\Le
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture216_ATMApp", "Lecture216_ATMApp\Lecture216_ATMApp.csproj", "{2B3427FD-BCC2-48CE-9BB2-1292FEA37AE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture217", "Lecture217\Lecture217.csproj", "{DB44C01D-46EF-471F-AD14-C57F73225799}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture217", "Lecture217\Lecture217.csproj", "{DB44C01D-46EF-471F-AD14-C57F73225799}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture219_Exam", "Lecture219_Exam\Lecture219_Exam.csproj", "{A23D0ACC-A6B1-47A6-9013-510CF3AEEEC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{EF54E581-977C-4F7C-BB52-91601934C9E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +115,14 @@ Global
 		{DB44C01D-46EF-471F-AD14-C57F73225799}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB44C01D-46EF-471F-AD14-C57F73225799}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB44C01D-46EF-471F-AD14-C57F73225799}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A23D0ACC-A6B1-47A6-9013-510CF3AEEEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23D0ACC-A6B1-47A6-9013-510CF3AEEEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23D0ACC-A6B1-47A6-9013-510CF3AEEEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A23D0ACC-A6B1-47A6-9013-510CF3AEEEC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF54E581-977C-4F7C-BB52-91601934C9E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF54E581-977C-4F7C-BB52-91601934C9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF54E581-977C-4F7C-BB52-91601934C9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF54E581-977C-4F7C-BB52-91601934C9E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
