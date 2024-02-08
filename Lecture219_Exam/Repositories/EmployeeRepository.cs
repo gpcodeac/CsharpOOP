@@ -13,6 +13,19 @@ namespace Lecture219_Exam.Repositories
 
         private readonly List<Employee> _employees = new();
 
+        public EmployeeRepository()
+        {
+            var employees = File.ReadAllLines(@"../../../Data/Employees.txt");
+            foreach (string employee in employees)
+            {
+                string[] parts = employee.Split(',');
+                int id = int.Parse(parts[0]);
+                string password = parts[1];
+                string name = parts[2];
+                _employees.Add(new Employee() { Id = id, Name = name, Password = password });
+            }
+        }
+
         public IEnumerable<Employee> GetAllEmployees()
         {
             return _employees;

@@ -3,8 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Lecture219_Exam.Repositories.Interfaces;
+using System.Text.Json;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Lecture219_Exam.Repositories
 {
@@ -12,6 +15,12 @@ namespace Lecture219_Exam.Repositories
     {
         
         private readonly List<Drink> _drinks = new();
+
+        public DrinkRepository()
+        {
+            var jsondrinks = File.ReadAllText(@"../../../Data/Drinks.json");
+            _drinks = JsonSerializer.Deserialize<List<Drink>>(jsondrinks);
+        }
 
         public IEnumerable<Drink> GetAllDrinks()
         {
@@ -26,6 +35,7 @@ namespace Lecture219_Exam.Repositories
         public void AddDrink(Drink drink)
         {
             _drinks.Add(drink);
+            Save();
         }
 
         public void UpdateDrink(Drink drink)
@@ -36,6 +46,7 @@ namespace Lecture219_Exam.Repositories
                 existingDrink.Name = drink.Name;
                 existingDrink.Price = drink.Price;
             }
+            Save();
         }
 
         public void DeleteDrink(int id)
@@ -45,6 +56,13 @@ namespace Lecture219_Exam.Repositories
             {
                 _drinks.Remove(drink);
             }
+            Save();
+        }
+
+        private void Save()
+        {
+            var jsondrinks = JsonSerializer.Serialize(_drinks);
+            File.WriteAllText(@"../../../Data/Drinks.json", jsondrinks);
         }
 
     }

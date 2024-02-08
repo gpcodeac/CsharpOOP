@@ -4,16 +4,38 @@ Update methos in repos - replace object with new one, or update properties of ex
 
 Remove all objects from repo list, or only first? Where is the uniqueness being handled in code or db?
 
-UI layer should not have any interfaces, is that correct?
 
-Still, regarding combining foods and drinks. I cannot do them in the ViewModel, because I would like them to manage as part of the order and then save them to DB? But not as itself, but as a link from an order.
+
 
 In models do we include other objects, or only primitive types? how does it map to DB if we include other objects?
 
-What would you normally start with - DB vs Models? Interfaces vs Implementation?
+Still, regarding combining foods and drinks. I cannot do them in the ViewModel, because I would like them to manage as part of the order and then save them to DB? But not as itself, but as a link from an order.
+
+
+
+Does Main call UI layer? Or does it call service layer, which calls UI layer as kinda helpers?
 
 In your main you are creating a new repository. I imagine layers are kinda Main->UI/Service->Repository->DB. Isnt that jumping through layers a bit? If I have many repositories, I would not handle them from Main , would I?
 
-How do I read from file and create objects based on my models, when Models dont have a constructor? Creating by explicitly defining each attribute isnt it like super hard coupling? How would I create a new object anyway in the service to pass to a repository, when service should not do new() on models?
+UI layer should not have any interfaces, is that correct? Because it is not called from anywhere.
+
+
+What would you normally start with - DB vs Models? Interfaces vs Implementation?
 
 why use interfaces? when I use them as types in my service, how does c# pick the implementation (ANS: based on how you initialized and which implementation was called with new() keyword)? but then if there is a 1:1 relationship between interface and implementation, why use interfaces at all?
+
+
+
+
+How do I read from file and create objects based on my models, when Models dont have a constructor? Creating by explicitly defining each attribute isnt it like super hard coupling? How would I create a new object anyway in the service to pass to a repository, when service should not do new() on models?
+
+
+
+
+
+//login
+//create order, choose table
+//add to order
+//remove from order
+//move order from one table to another
+//pay order and close table

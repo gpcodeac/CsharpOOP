@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lecture219_Exam.Utils
+namespace Lecture219_Exam.Unused
 {
     internal class Init
     {

@@ -1,0 +1,82 @@
+﻿[
+    {
+        "id": 1,
+        "name": "Burger classic",
+        "price": 7.00
+    },
+    {
+        "id": 2,
+        "name": "Burger with cheese",
+        "price": 7.50
+    },
+    {
+        "id": 3,
+        "name": "Burger with bacon",
+        "price": 8.50
+    },
+    {
+        "id": 4,
+        "name": "Kebab with chicken",
+        "price": 5.50
+    },
+    {
+        "id": 5,
+        "name": "Kebab with pork",
+        "price": 5.50
+    },
+    {
+        "id": 6,
+        "name": "Pizza Margherita",
+        "price": 7.00
+    },
+    {
+        "id": 7,
+        "name": "Pizza Pepperoni",
+        "price": 8.50
+    },
+    {
+        "id": 8,
+        "name": "Pizza Diavola",
+        "price": 9.00
+    },
+    {
+        "id": 9,
+        "name": "HotDog",
+        "price": 4.00
+    },
+    {
+        "id": 10,
+        "name": "Pierogi",
+        "price": 6.00
+    },
+    {
+        "id": 11,
+        "name": "French fries",
+        "price": 3.00
+    },
+    {
+        "id": 12,
+        "name": "Garlic bread",
+        "price": 3.00
+    },
+    {
+        "id": 13,
+        "name": "Ketchup",
+        "price": 0.25
+    },
+    {
+        "id": 14,
+        "name": "Mayonnaise",
+        "price": 0.25
+    },
+    {
+        "id": 15,
+        "name": "Mustard",
+        "price": 0.25
+    },
+    {
+        "id": 16,
+        "name": "Garlic sauce",
+        "price": 0.25
+    }
+]

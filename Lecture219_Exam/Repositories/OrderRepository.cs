@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Lecture219_Exam.Models;
 using Lecture219_Exam.Repositories.Interfaces;
@@ -12,6 +13,12 @@ namespace Lecture219_Exam.Repositories
     {
 
         private readonly List<Order> _orders = new();
+
+        public OrderRepository()
+        {
+            var jsonorders = File.ReadAllText(@"../../../Data/Orders.json");
+            _orders = JsonSerializer.Deserialize<List<Order>>(jsonorders);
+        }
 
         public IEnumerable<Order> GetAllOrders()
         {
@@ -26,6 +33,7 @@ namespace Lecture219_Exam.Repositories
         public void AddOrder(Order order)
         {
             _orders.Add(order);
+            Save();
         }
 
         public void UpdateOrder(Order order)
@@ -35,6 +43,7 @@ namespace Lecture219_Exam.Repositories
             {
                 _orders[ix] = order;
             }
+            Save();
         }
 
         public void DeleteOrder(int id)
@@ -44,6 +53,13 @@ namespace Lecture219_Exam.Repositories
             {
                 _orders.Remove(order);
             }
+            Save();
+        }
+
+        private void Save()
+        {
+            var jsonorders = JsonSerializer.Serialize(_orders);
+            File.WriteAllText(@"../../../Data/Orders.json", jsonorders);
         }
     }
 }

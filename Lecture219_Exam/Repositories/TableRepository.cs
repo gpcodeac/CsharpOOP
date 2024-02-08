@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Lecture219_Exam.Models;
 using Lecture219_Exam.Repositories.Interfaces;
 
 namespace Lecture219_Exam.Repositories
 {
-    internal class TableRepository: ITableRepository
+    internal class TableRepository : ITableRepository
     {
         private readonly List<Table> _tables = new();
+
+        public TableRepository()
+        {
+            var jsontables = File.ReadAllText(@"../../../Data/Tables.json");
+            _tables = JsonSerializer.Deserialize<List<Table>>(jsontables);
+        }
 
         public IEnumerable<Table> GetAllTables()
         {
@@ -25,6 +32,7 @@ namespace Lecture219_Exam.Repositories
         public void AddTable(Table table)
         {
             _tables.Add(table);
+            Save();
         }
 
         public void UpdateTable(Table table)
@@ -35,6 +43,7 @@ namespace Lecture219_Exam.Repositories
                 existingTable.Capacity = table.Capacity;
                 existingTable.IsAvailable = table.IsAvailable;
             }
+            Save();
         }
 
         public void DeleteTable(int id)
@@ -44,6 +53,13 @@ namespace Lecture219_Exam.Repositories
             {
                 _tables.Remove(table);
             }
+            Save();
+        }
+
+        private void Save()
+        {
+            var json = JsonSerializer.Serialize(_tables);
+            File.WriteAllText(@"../../../Data/Tables.json", json);
         }
     }
 }

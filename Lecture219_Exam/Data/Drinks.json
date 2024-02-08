@@ -1,0 +1,92 @@
+﻿[
+    {
+        "id": 1,
+        "name": "Svyturio Extra",
+        "price": 3.5
+    },
+    {
+        "id": 2,
+        "name": "Guinness",
+        "price": 5.5
+    },
+    {
+        "id": 3,
+        "name": "Kilkenny",
+        "price": 4.5
+    },
+    {
+        "id": 4,
+        "name": "Kronenbourg 1664",
+        "price": 4.5
+    },
+    {
+        "id": 5,
+        "name": "Leffe Blonde",
+        "price": 4.5
+    },
+    {
+        "id": 6,
+        "name": "Leffe Brune",
+        "price": 4.5
+    },
+    {
+        "id": 7,
+        "name": "Urquell Pilsner",
+        "price": 4
+    },
+    {
+        "id": 8,
+        "name": "Coca Cola",
+        "price": 2
+    },
+    {
+        "id": 9,
+        "name": "Coca Cola Zero",
+        "price": 2
+    },
+    {
+        "id": 10,
+        "name": "Fanta",
+        "price": 2
+    },
+    {
+        "id": 11,
+        "name": "Sprite",
+        "price": 2
+    },
+    {
+        "id": 12,
+        "name": "Lipton Ice Tea",
+        "price": 2
+    },
+    {
+        "id": 13,
+        "name": "Red Bull",
+        "price": 3
+    },
+    {
+        "id": 14,
+        "name": "Red Bull Sugar Free",
+        "price": 3
+    },
+    {
+        "id": 15,
+        "name": "Still Water",
+        "price": 2
+    },
+    {
+        "id": 16,
+        "name": "Sparkling Water",
+        "price": 2
+    },
+    {
+        "id": 17,
+        "name": "Orange Juice",
+        "price": 2
+    },
+    {
+        "id": 18,
+        "name": "Apple Juice",
+        "price": 2.00
+    }
+]

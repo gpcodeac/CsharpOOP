@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lecture219_Exam.UI
 {
-    internal class ScreenPrint
+    internal class TablesScreen
     {
     }
 }

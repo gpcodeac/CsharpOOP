@@ -1,0 +1,27 @@
+﻿[
+    {
+        "id": 1,
+        "password": 123,
+        "name": "German P"
+    },
+    {
+        "id": 2,
+        "password": 234,
+        "name": "Benefit Cornstarch"
+    },
+    {
+        "id": 3,
+        "password": 345,
+        "name": "Contradict Bumberpatch"
+    },
+    {
+        "id": 4,
+        "password": 456,
+        "name": "Noodly Postman"
+    },
+    {
+        "id": 5,
+        "password": 567,
+        "name": "Crisp Rat"
+    }
+]

@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lecture219_Exam.Models
 {
-    internal class Drink : IMenuItem
+    internal interface IMenuItem
     {
-        public int Id { get; set; }
-        public string Name { get; set; } = "";
-        public decimal Price { get; set; }
     }
 }

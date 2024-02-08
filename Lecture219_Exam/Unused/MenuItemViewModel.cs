@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lecture219_Exam.ViewModels
+namespace Lecture219_Exam.Unused
 {
     internal class MenuItemViewModel
     {
