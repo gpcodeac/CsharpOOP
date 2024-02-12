@@ -1,9 +1,18 @@
-﻿[
-    {
-        "Id": 1,
-        "OrderId": 999,
-        "TotalPrice": 420,
-        "Discount": 0,
-        "FinalPrice": 420
-    }
+[
+  {
+    "Id": 1,
+    "OrderId": 999,
+    "TotalPrice": 420,
+    "Discount": 0,
+    "FinalPrice": 420,
+    "OrderDetails": ""
+  },
+  {
+    "Id": 2,
+    "OrderId": 9,
+    "TotalPrice": 9.0,
+    "Discount": 0,
+    "FinalPrice": 9.0,
+    "OrderDetails": "Order ID: 9\nDate: 2024-02-12 20:05:47\nTable ID: 5\nEmployee ID: 0\nItems:\n\nLeffe Blonde - 4,5\nLeffe Brune - 4,5\n\nTotal: 9,0\n"
+  }
 ]

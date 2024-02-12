@@ -10,17 +10,10 @@ namespace Lecture219_Exam.Services
     {
 
         private readonly IVoucherRepository _voucherRepository;
-        private readonly IOrderManagementService _orderManagementService = null;
 
         public VoucherManagementService()
         {
             _voucherRepository = new VoucherRepository();
-        }
-
-        public VoucherManagementService(IOrderManagementService orderManagementService)
-        {
-            _voucherRepository = new VoucherRepository();
-            _orderManagementService = orderManagementService;
         }
 
         private int GetNextVoucherId()
@@ -36,24 +29,24 @@ namespace Lecture219_Exam.Services
                 OrderId = orderId,
                 TotalPrice = totalPrice,
                 Discount = 0,
-                FinalPrice = totalPrice
+                FinalPrice = totalPrice,
+                OrderDetails = ""
             };
+            _voucherRepository.AddVoucher(voucher);
             return voucher.Id;
         }
 
-        //public void UpdateVoucher(IOrderManagementService orderManagementService)
-        //{
-        //    Voucher voucher = _voucherRepository.GetVoucher(orderId);
-        //    decimal totalPrice = voucher.TotalPrice;
-        //    decimal discount = 0;
-        //    if (totalPrice > 100)
-        //    {
-        //        discount = totalPrice * 0.1m;
-        //    }
-        //    decimal finalPrice = totalPrice - discount;
-        //    voucher.Discount = discount;
-        //    voucher.FinalPrice = finalPrice;
-        //    _voucherRepository.UpdateVoucher(voucher);
-        //}
+        public void AddOrderDetails(int orderId, string details)
+        {
+            Voucher voucher = _voucherRepository.GetAllVouchers().FirstOrDefault(v => v.OrderId == orderId);
+            voucher.OrderDetails = details;
+            _voucherRepository.UpdateVoucher(voucher);
+        }
+
+        public string GetVoucherDetails(int voucherId)
+        {
+            return _voucherRepository.GetVoucher(voucherId).OrderDetails;
+        } 
+
     }
 }

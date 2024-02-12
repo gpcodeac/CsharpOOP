@@ -1,7 +1,6 @@
 ﻿using Lecture219_Exam.Services.Interfaces;
 using Lecture219_Exam.Services;
 using Lecture219_Exam.UI.Interfaces;
-using Lecture219_Exam.Models;
 using Lecture219_Exam.Utils;
 
 namespace Lecture219_Exam.UI
@@ -10,7 +9,6 @@ namespace Lecture219_Exam.UI
     {
 
         private readonly IOrderManagementService _orderManagementService = new OrderManagementService();
-        private readonly IVoucherManagementService _voucherManagementService = new VoucherManagementService();
 
         public IScreen Print()
         {
@@ -28,8 +26,6 @@ namespace Lecture219_Exam.UI
                 if (choice.ToLower() == "y")
                 {
                     _orderManagementService.CloseOrder(orderId);
-                    _voucherManagementService.UpdateVoucher(_orderManagementService);
-                    
                     AppMessage.Display($"Order {orderId} has been closed.", ErrCode.Information, true);
                     return new HomeScreen();
                 }

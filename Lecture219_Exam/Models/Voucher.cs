@@ -13,6 +13,6 @@ namespace Lecture219_Exam.Models
         public decimal TotalPrice { get; set; }
         public decimal Discount { get; set; }
         public decimal FinalPrice { get; set; }
-
+        public string OrderDetails { get; set; } = "";
     }
 }

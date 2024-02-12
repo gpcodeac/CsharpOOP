@@ -104,6 +104,7 @@ namespace Lecture219_Exam.Services
             decimal totalPrice = order.FoodIds.Select(_foodRepository.GetFood).Sum(f => f.Price) +
                                  order.DrinkIds.Select(_drinkRepository.GetDrink).Sum(d => d.Price);
             int voucher = _voucherManagementService.CreateVoucher(orderId, totalPrice);
+            _voucherManagementService.AddOrderDetails(orderId, GetOrderDetails(orderId));
             _tableManagementService.ReleaseTable(order.TableId);
         }
 
@@ -114,8 +115,8 @@ namespace Lecture219_Exam.Services
             string text = $"Order ID: {order.Id}\n" +
                           $"Date: {order.Date}\n" +
                           $"Table ID: {order.TableId}\n" +
-                          $"Employee ID: {order.EmployeeId}\n" +
-                          "Items:\n\n";
+                          $"Employee ID: {order.EmployeeId}\n\n" +
+                          "Items:\n";
 
             List<Food> foods = order.FoodIds.Select(id => _foodRepository.GetFood(id)).ToList();
             foreach (var food in foods)

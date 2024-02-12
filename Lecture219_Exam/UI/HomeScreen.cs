@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Lecture219_Exam.Models;
-using Lecture219_Exam.UI.Interfaces;
+﻿using Lecture219_Exam.UI.Interfaces;
 using Lecture219_Exam.Utils;
+
 
 namespace Lecture219_Exam.UI
 {
@@ -24,6 +19,7 @@ namespace Lecture219_Exam.UI
                 1. Create a new order
                 2. Change an existing order
                 3. Close an order
+                4. Display a voucher
 
                 0. Exit
 
@@ -39,6 +35,8 @@ namespace Lecture219_Exam.UI
                         return new ChangeOrderScreen();
                     case "3":
                         return new CloseOrderScreen();
+                    case "4":
+                        return new PrintVoucherScreen();
                     case "0":
                         return new LoginScreen();
                     default:
