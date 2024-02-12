@@ -1,5 +1,0 @@
-﻿1,123,German P
-2,234,Benefit Cornstarch
-3,345,Contradict Bumberpatch
-4,456,Noodly Postman
-5,567,Crisp Rat

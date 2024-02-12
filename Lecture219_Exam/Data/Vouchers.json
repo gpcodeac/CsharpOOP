@@ -14,5 +14,13 @@
     "Discount": 0,
     "FinalPrice": 9.0,
     "OrderDetails": "Order ID: 9\nDate: 2024-02-12 20:05:47\nTable ID: 5\nEmployee ID: 0\nItems:\n\nLeffe Blonde - 4,5\nLeffe Brune - 4,5\n\nTotal: 9,0\n"
+  },
+  {
+    "Id": 3,
+    "OrderId": 10,
+    "TotalPrice": 23.00,
+    "Discount": 0,
+    "FinalPrice": 23.00,
+    "OrderDetails": "Order ID: 10\nDate: 2024-02-12 21:37:45\nTable ID: 7\nEmployee ID: 0\n\nItems:\nBurger with cheese - 7,50\nPierogi - 6,00\nHotDog - 4,00\nGuinness - 5,5\n\nTotal: 23,00\n"
   }
 ]
