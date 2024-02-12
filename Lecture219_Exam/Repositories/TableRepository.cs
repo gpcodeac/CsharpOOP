@@ -11,33 +11,33 @@ namespace Lecture219_Exam.Repositories
 {
     internal class TableRepository : ITableRepository
     {
-        private readonly List<Table> _tables = new();
+        private readonly List<MyTable> _tables = new();
 
         public TableRepository()
         {
             var jsontables = File.ReadAllText(@"../../../Data/Tables.json");
-            _tables = JsonSerializer.Deserialize<List<Table>>(jsontables);
+            _tables = JsonSerializer.Deserialize<List<MyTable>>(jsontables);
         }
 
-        public IEnumerable<Table> GetAllTables()
+        public IEnumerable<MyTable> GetAllTables()
         {
             return _tables;
         }
 
-        public Table GetTable(int id)
+        public MyTable GetTable(int id)
         {
             return _tables.FirstOrDefault(t => t.Id == id);
         }
 
-        public void AddTable(Table table)
+        public void AddTable(MyTable table)
         {
             _tables.Add(table);
             Save();
         }
 
-        public void UpdateTable(Table table)
+        public void UpdateTable(MyTable table)
         {
-            Table? existingTable = _tables.FirstOrDefault(t => t.Id == table.Id); //should I replace an object or update its properties?
+            MyTable? existingTable = _tables.FirstOrDefault(t => t.Id == table.Id); //should I replace an object or update its properties?
             if (existingTable != null)
             {
                 existingTable.Capacity = table.Capacity;
@@ -48,7 +48,7 @@ namespace Lecture219_Exam.Repositories
 
         public void DeleteTable(int id)
         {
-            Table? table = _tables.FirstOrDefault(t => t.Id == id);
+            MyTable? table = _tables.FirstOrDefault(t => t.Id == id);
             if (table != null)
             {
                 _tables.Remove(table);
@@ -58,7 +58,11 @@ namespace Lecture219_Exam.Repositories
 
         private void Save()
         {
-            var json = JsonSerializer.Serialize(_tables);
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            var json = JsonSerializer.Serialize(_tables, options);
             File.WriteAllText(@"../../../Data/Tables.json", json);
         }
     }

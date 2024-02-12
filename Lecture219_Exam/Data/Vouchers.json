@@ -1,1 +1,9 @@
-﻿
+﻿[
+    {
+        "Id": 1,
+        "OrderId": 999,
+        "TotalPrice": 420,
+        "Discount": 0,
+        "FinalPrice": 420
+    }
+]

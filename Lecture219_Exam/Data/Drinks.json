@@ -1,92 +1,92 @@
 ﻿[
     {
-        "id": 1,
-        "name": "Svyturio Extra",
-        "price": 3.5
+        "Id": 1,
+        "Name": "Svyturio Extra",
+        "Price": 3.5
     },
     {
-        "id": 2,
-        "name": "Guinness",
-        "price": 5.5
+        "Id": 2,
+        "Name": "Guinness",
+        "Price": 5.5
     },
     {
-        "id": 3,
-        "name": "Kilkenny",
-        "price": 4.5
+        "Id": 3,
+        "Name": "Kilkenny",
+        "Price": 4.5
     },
     {
-        "id": 4,
-        "name": "Kronenbourg 1664",
-        "price": 4.5
+        "Id": 4,
+        "Name": "Kronenbourg 1664",
+        "Price": 4.5
     },
     {
-        "id": 5,
-        "name": "Leffe Blonde",
-        "price": 4.5
+        "Id": 5,
+        "Name": "Leffe Blonde",
+        "Price": 4.5
     },
     {
-        "id": 6,
-        "name": "Leffe Brune",
-        "price": 4.5
+        "Id": 6,
+        "Name": "Leffe Brune",
+        "Price": 4.5
     },
     {
-        "id": 7,
-        "name": "Urquell Pilsner",
-        "price": 4
+        "Id": 7,
+        "Name": "Urquell Pilsner",
+        "Price": 4
     },
     {
-        "id": 8,
-        "name": "Coca Cola",
-        "price": 2
+        "Id": 8,
+        "Name": "Coca Cola",
+        "Price": 2
     },
     {
-        "id": 9,
-        "name": "Coca Cola Zero",
-        "price": 2
+        "Id": 9,
+        "Name": "Coca Cola Zero",
+        "Price": 2
     },
     {
-        "id": 10,
-        "name": "Fanta",
-        "price": 2
+        "Id": 10,
+        "Name": "Fanta",
+        "Price": 2
     },
     {
-        "id": 11,
-        "name": "Sprite",
-        "price": 2
+        "Id": 11,
+        "Name": "Sprite",
+        "Price": 2
     },
     {
-        "id": 12,
-        "name": "Lipton Ice Tea",
-        "price": 2
+        "Id": 12,
+        "Name": "Lipton Ice Tea",
+        "Price": 2
     },
     {
-        "id": 13,
-        "name": "Red Bull",
-        "price": 3
+        "Id": 13,
+        "Name": "Red Bull",
+        "Price": 3
     },
     {
-        "id": 14,
-        "name": "Red Bull Sugar Free",
-        "price": 3
+        "Id": 14,
+        "Name": "Red Bull Sugar Free",
+        "Price": 3
     },
     {
-        "id": 15,
-        "name": "Still Water",
-        "price": 2
+        "Id": 15,
+        "Name": "Still Water",
+        "Price": 2
     },
     {
-        "id": 16,
-        "name": "Sparkling Water",
-        "price": 2
+        "Id": 16,
+        "Name": "Sparkling Water",
+        "Price": 2
     },
     {
-        "id": 17,
-        "name": "Orange Juice",
-        "price": 2
+        "Id": 17,
+        "Name": "Orange Juice",
+        "Price": 2
     },
     {
-        "id": 18,
-        "name": "Apple Juice",
-        "price": 2.00
+        "Id": 18,
+        "Name": "Apple Juice",
+        "Price": 2.00
     }
 ]

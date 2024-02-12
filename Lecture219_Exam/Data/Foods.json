@@ -1,82 +1,82 @@
 ﻿[
     {
-        "id": 1,
-        "name": "Burger classic",
-        "price": 7.00
+        "Id": 1,
+        "Name": "Burger classic",
+        "Price": 7.00
     },
     {
-        "id": 2,
-        "name": "Burger with cheese",
-        "price": 7.50
+        "Id": 2,
+        "Name": "Burger with cheese",
+        "Price": 7.50
     },
     {
-        "id": 3,
-        "name": "Burger with bacon",
-        "price": 8.50
+        "Id": 3,
+        "Name": "Burger with bacon",
+        "Price": 8.50
     },
     {
-        "id": 4,
-        "name": "Kebab with chicken",
-        "price": 5.50
+        "Id": 4,
+        "Name": "Kebab with chicken",
+        "Price": 5.50
     },
     {
-        "id": 5,
-        "name": "Kebab with pork",
-        "price": 5.50
+        "Id": 5,
+        "Name": "Kebab with pork",
+        "Price": 5.50
     },
     {
-        "id": 6,
-        "name": "Pizza Margherita",
-        "price": 7.00
+        "Id": 6,
+        "Name": "Pizza Margherita",
+        "Price": 7.00
     },
     {
-        "id": 7,
-        "name": "Pizza Pepperoni",
-        "price": 8.50
+        "Id": 7,
+        "Name": "Pizza Pepperoni",
+        "Price": 8.50
     },
     {
-        "id": 8,
-        "name": "Pizza Diavola",
-        "price": 9.00
+        "Id": 8,
+        "Name": "Pizza Diavola",
+        "Price": 9.00
     },
     {
-        "id": 9,
-        "name": "HotDog",
-        "price": 4.00
+        "Id": 9,
+        "Name": "HotDog",
+        "Price": 4.00
     },
     {
-        "id": 10,
-        "name": "Pierogi",
-        "price": 6.00
+        "Id": 10,
+        "Name": "Pierogi",
+        "Price": 6.00
     },
     {
-        "id": 11,
-        "name": "French fries",
-        "price": 3.00
+        "Id": 11,
+        "Name": "French fries",
+        "Price": 3.00
     },
     {
-        "id": 12,
-        "name": "Garlic bread",
-        "price": 3.00
+        "Id": 12,
+        "Name": "Garlic bread",
+        "Price": 3.00
     },
     {
-        "id": 13,
-        "name": "Ketchup",
-        "price": 0.25
+        "Id": 13,
+        "Name": "Ketchup",
+        "Price": 0.25
     },
     {
-        "id": 14,
-        "name": "Mayonnaise",
-        "price": 0.25
+        "Id": 14,
+        "Name": "Mayonnaise",
+        "Price": 0.25
     },
     {
-        "id": 15,
-        "name": "Mustard",
-        "price": 0.25
+        "Id": 15,
+        "Name": "Mustard",
+        "Price": 0.25
     },
     {
-        "id": 16,
-        "name": "Garlic sauce",
-        "price": 0.25
+        "Id": 16,
+        "Name": "Garlic sauce",
+        "Price": 0.25
     }
 ]

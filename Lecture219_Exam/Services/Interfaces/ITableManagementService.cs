@@ -9,15 +9,14 @@ namespace Lecture219_Exam.Services.Interfaces
 {
     internal interface ITableManagementService
     {
-        public List<Table> GetAllTables();
 
-        public List<Table> GetAvailableTables();
+        public int FindTable();
 
-        //public Table GetTable(int id);
+        public int ReserveTable();
 
-        public void ReserveTable(Table table);
+        public void ReleaseTable();
 
-        public void ReleaseTable(Table table);
+        public void ReleaseTable(int tableId);
 
     }
 }

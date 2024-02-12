@@ -9,10 +9,10 @@ namespace Lecture219_Exam.Repositories.Interfaces
 {
     internal interface ITableRepository
     {
-        public IEnumerable<Table> GetAllTables();
-        public Table GetTable(int id);
-        public void AddTable(Table table);
-        public void UpdateTable(Table table);
+        public IEnumerable<MyTable> GetAllTables();
+        public MyTable GetTable(int id);
+        public void AddTable(MyTable table);
+        public void UpdateTable(MyTable table);
         public void DeleteTable(int id);
 
     }

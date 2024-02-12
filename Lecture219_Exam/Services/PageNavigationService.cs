@@ -5,38 +5,52 @@ using System.Text;
 using System.Threading.Tasks;
 using Lecture219_Exam.UI;
 using Lecture219_Exam.Unused;
+using Lecture219_Exam.Services.Interfaces;
+using Lecture219_Exam.UI.Interfaces;
+using Lecture219_Exam.ZUnused;
 
 namespace Lecture219_Exam.Services
 {
-    internal class PageNavigationService
+    internal class PageNavigationService 
     {
-        private readonly Dictionary<Screen, List<Screen>> edges;
+     
+        private IScreen _currentScreen;
 
         public PageNavigationService()
         {
-            edges = new Dictionary<Screen, List<Screen>>();
+            _currentScreen = new LoginScreen();
         }
 
-        public void AddScreen(Screen screen)
+        public PageNavigationService(string screenName)
         {
-            if (!edges.ContainsKey(screen))
+            //_currentScreen = ScreenFactory.CreateScreen(screenName);
+        }
+
+        public void Run()
+        {
+            while (true)
             {
-                edges[screen] = new List<Screen>();
+                _currentScreen = _currentScreen.Print();
             }
         }
 
-        public void AddPath(Screen fromScreen, Screen toScreen)
-        {
-            AddScreen(fromScreen);
-            AddScreen(toScreen);
+        //public void GoBack()
+        //{
+        //    _currentScreen = _previousScreen;
+        //}
 
-            edges[fromScreen].Add(toScreen);
-        }
+        //public IScreen GetCurrentScreen()
+        //{
+        //    return _currentScreen;
+        //}
 
-        public List<Screen> GetPossiblePaths(Screen fromScreen)
-        {
-            return edges.ContainsKey(fromScreen) ? edges[fromScreen] : new List<Screen>();
-        }
+        //public void NavigateTo(IScreen screen)
+        //{
+        //    _previousScreen = _currentScreen;
+        //    _currentScreen = screen;
+        //}
+
+
     }
 }
 

@@ -1,27 +1,27 @@
 ﻿[
     {
-        "id": 1,
-        "password": 123,
-        "name": "German P"
+        "Id": 1,
+        "Password": "123",
+        "Name": "German P"
     },
     {
-        "id": 2,
-        "password": 234,
-        "name": "Benefit Cornstarch"
+        "Id": 2,
+        "Password": "234",
+        "Name": "Benefit Cornstarch"
     },
     {
-        "id": 3,
-        "password": 345,
-        "name": "Contradict Bumberpatch"
+        "Id": 3,
+        "Password": "345",
+        "Name": "Contradict Bumberpatch"
     },
     {
-        "id": 4,
-        "password": 456,
-        "name": "Noodly Postman"
+        "Id": 4,
+        "Password": "456",
+        "Name": "Noodly Postman"
     },
     {
-        "id": 5,
-        "password": 567,
-        "name": "Crisp Rat"
+        "Id": 5,
+        "Password": "567",
+        "Name": "Crisp Rat"
     }
 ]

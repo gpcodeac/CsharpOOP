@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lecture219_Exam.Models;
+using Lecture219_Exam.UI.Interfaces;
+using Lecture219_Exam.Utils;
 
 namespace Lecture219_Exam.UI
 {
-    internal static class HomeScreen
+    internal class HomeScreen : IScreen
     {
-        public static int Print()
+        public IScreen Print()
         {
             while (true)
             {
-                Console.WriteLine("Welcome to the Home Screen!\n\n");
-                string options = """
+                string text = """
+                Welcome to the Home Screen!
+
+
                 Choose what you want to do:
 
                 1. Create a new order
@@ -23,8 +28,23 @@ namespace Lecture219_Exam.UI
                 0. Exit
 
                 """;
-                Console.WriteLine(options);
+                AppMessage.Display(text);
+
                 string choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        return new CreateOrderScreen();
+                    case "2":
+                        return new ChangeOrderScreen();
+                    case "3":
+                        return new CloseOrderScreen();
+                    case "0":
+                        return new LoginScreen();
+                    default:
+                        AppMessage.Display("Invalid choice. Please try again.", ErrCode.Warning, true);
+                        break;
+                }
             }
         }
     }

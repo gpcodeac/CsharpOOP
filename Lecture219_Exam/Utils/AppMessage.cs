@@ -7,10 +7,9 @@ using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 namespace Lecture219_Exam.Utils
 {
-    internal static class ScreenBuilder
+    internal static class AppMessage
     {
-
-        public static void Display(this string text, ErrCode code = ErrCode.OK, bool hold = false)
+        public static void Display(string text, ErrCode code = ErrCode.OK, bool hold = false)
         {
             Console.Clear();
             switch (code)

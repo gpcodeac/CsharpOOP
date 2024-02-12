@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 using Lecture219_Exam.Models;
 using Lecture219_Exam.Repositories.Interfaces;
 
@@ -54,7 +49,11 @@ namespace Lecture219_Exam.Repositories
 
         private void Save()
         {
-            var jsonvouchers = JsonSerializer.Serialize(_vouchers);
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            var jsonvouchers = JsonSerializer.Serialize(_vouchers, options);
             File.WriteAllText(@"../../../Data/Vouchers.json", jsonvouchers);
         }
 

@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lecture219_Exam.UI
 {
-    internal class Screen
+    internal class DisplayVoucherScreen
     {
-        public string Name { get; }
-
-        public Screen(string name)
-        {
-            Name = name;
-        }
     }
 }

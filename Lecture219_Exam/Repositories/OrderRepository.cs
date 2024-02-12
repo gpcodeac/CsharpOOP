@@ -58,7 +58,11 @@ namespace Lecture219_Exam.Repositories
 
         private void Save()
         {
-            var jsonorders = JsonSerializer.Serialize(_orders);
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            var jsonorders = JsonSerializer.Serialize(_orders, options);
             File.WriteAllText(@"../../../Data/Orders.json", jsonorders);
         }
     }

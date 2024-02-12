@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Lecture219_Exam.Repositories.Interfaces;
+﻿using Lecture219_Exam.Repositories.Interfaces;
 using Lecture219_Exam.Repositories;
 using Lecture219_Exam.Services.Interfaces;
 using Lecture219_Exam.Models;
+using Lecture219_Exam.UI;
+
 
 namespace Lecture219_Exam.Services
 {
@@ -14,44 +11,58 @@ namespace Lecture219_Exam.Services
     {
         private readonly ITableRepository _tableRepository;
 
-        //public TableManagementService(ITableRepository tableRepository)
-        //{
-        //    _tableRepository = tableRepository;
-        //}
-
         public TableManagementService()
         {
             _tableRepository = new TableRepository();
         }
 
-        public List<Table> GetAllTables()
+
+        private List<MyTable> GetAllTables()
         {
             return _tableRepository.GetAllTables().ToList();
         }
 
-        public List<Table> GetAvailableTables()
+        private List<MyTable> GetAvailableTables()
         {
             return _tableRepository.GetAllTables().Where(t => t.IsAvailable).ToList();
         }
 
-        public void ReserveTable(Table table)
+        private List<MyTable> GetReservedTables()
         {
-            Table? existingTable = _tableRepository.GetTable(table.Id);
-            if (existingTable != null)
-            {
-                existingTable.IsAvailable = false;
-                _tableRepository.UpdateTable(existingTable);
-            }
+            return _tableRepository.GetAllTables().Where(t => !t.IsAvailable).ToList();
         }
 
-        public void ReleaseTable(Table table)
+        public int FindTable()
         {
-            Table? existingTable = _tableRepository.GetTable(table.Id);
-            if (existingTable != null)
-            {
-                existingTable.IsAvailable = true;
-                _tableRepository.UpdateTable(existingTable);
-            }
+            List<MyTable> allTables = GetAllTables();
+            MyTable selectedTable = TablesScreen.Print(allTables);
+            return selectedTable.Id;
+        }
+       
+        public int ReserveTable()
+        {
+            List<MyTable> availableTables = GetAvailableTables();
+            MyTable selectedTable = TablesScreen.Print(availableTables);
+
+            selectedTable.IsAvailable = false;
+            _tableRepository.UpdateTable(selectedTable);
+            return selectedTable.Id;
+        }
+
+        public void ReleaseTable()
+        {
+            List<MyTable> reservedTables = GetReservedTables();
+            MyTable selectedTable = TablesScreen.Print(reservedTables);
+
+            selectedTable.IsAvailable = true;
+            _tableRepository.UpdateTable(selectedTable);
+        }
+
+        public void ReleaseTable(int tableId)
+        {
+            MyTable table = _tableRepository.GetTable(tableId);
+            table.IsAvailable = true;
+            _tableRepository.UpdateTable(table);
         }
 
     }

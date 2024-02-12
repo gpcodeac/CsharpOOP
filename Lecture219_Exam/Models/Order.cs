@@ -5,8 +5,6 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-using Lecture219_Exam.ViewModels;
-
 namespace Lecture219_Exam.Models
 {
     internal class Order
@@ -19,18 +17,8 @@ namespace Lecture219_Exam.Models
         
         public int EmployeeId { get; set; }
         
-        public List<int> FoodIds { get; set; }
+        public List<int> FoodIds { get; set; } = new List<int>();
         
-        public List<int> DrinkIds { get; set; }
-
-        //public Employee Employee { get; set; } = new Employee();
-
-        //public List<Food> FoodItems { get; set; } = new List<Food>();
-
-        //public List<Drink> DrinkItems { get; set; } = new List<Drink>();
-
-        //public Table Table { get; set; } = new Table();
-
-        //public List<IMenuItem> Items { get; set; } = new List<IMenuItem>(); 
+        public List<int> DrinkIds { get; set; } = new List<int>();
     }
 }
